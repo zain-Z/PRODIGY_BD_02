@@ -1,89 +1,68 @@
 
-# Task 01 – Basic REST API with CRUD Operations (NestJS)
+# Task 02 – Persistent Storage with MongoDB (NestJS)
 
-This project is part of the Prodigy InfoTech Backend Internship. It implements a basic REST API using **NestJS** to perform CRUD operations on a `User` resource using in-memory storage.
+This project is the second task completed as part of the **Backend Web Development Internship at Prodigy InfoTech**.
 
-## 🛠 Tech Stack
+## 🚀 Task Overview
 
-- Node.js
-- NestJS
-- TypeScript
-- Postman (for testing)
+Extend the basic REST API (Task 01) by integrating **MongoDB** to enable persistent storage of user data.
 
-## 📦 Installation
+## 📦 Tech Stack
 
-1. Clone the repository:
+- **Framework:** NestJS (Node.js + TypeScript)
+- **Database:** MongoDB
+- **ODM:** Mongoose
+- **Validation:** class-validator + DTOs
+- **Environment Config:** @nestjs/config, .env
+- **Tooling:** Postman (for testing)
+
+## 📁 Features
+
+- ✅ Create, Read, Update, Delete (CRUD) operations on user data.
+- ✅ MongoDB database integration using Mongoose.
+- ✅ Environment-based configuration using `.env` file.
+- ✅ Input validation using DTOs (`class-validator`).
+- ✅ Proper error handling and status codes.
+- ✅ Modular architecture with controllers, services, and schema.
+
+## 🛠️ Installation
+
 ```bash
-git clone https://github.com/zain-Z/PRODIGY_BD_01.git
-cd PRODIGY_BD_01
-```
+# Clone the repository
+git clone https://github.com/zain-Z/PRODIGY_BD_02.git
+cd PRODIGY_BD_02
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Run the development server:
-```bash
+# Copy .env.example to .env and update MongoDB URI
+cp .env.example .env
+
+# Start the server
 npm run start:dev
 ```
 
-## 🚀 API Endpoints
+## 🌐 API Endpoints
 
-| Method | Endpoint         | Description          |
+| Method | Endpoint        | Description          |
 |--------|------------------|----------------------|
-| GET    | `/users`         | Get all users        |
-| GET    | `/users/:id`     | Get user by ID       |
-| POST   | `/users`         | Create new user      |
-| PUT    | `/users/:id`     | Update user by ID    |
-| DELETE | `/users/:id`     | Delete user by ID    |
+| POST   | /users           | Create a new user    |
+| GET    | /users           | Get all users        |
+| GET    | /users/:id       | Get a single user    |
+| PUT    | /users/:id       | Update user details  |
+| DELETE | /users/:id       | Delete a user        |
 
-## 🧪 Testing the API
+## 📄 Sample .env File
 
-Use **Postman** to interact with the endpoints:
-
-### Sample User Object:
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "age": 25
-}
+```
+MONGO_URI=mongodb://localhost:27017/prodigy-users
 ```
 
-- Make sure the email is valid.
-- `id` is automatically generated (UUID).
+## 🧪 Testing
 
-## 📄 DTO Explanation
-
-In NestJS, a DTO (**Data Transfer Object**) defines the shape of the data sent over the network.  
-We use it to **validate** and **type-check** incoming request bodies.
-
-Example: `create-user.dto.ts`
-```ts
-export class CreateUserDto {
-  name: string;
-  email: string;
-  age: number;
-}
-```
-
-DTOs help ensure clean and safe data flow between client and server.
-
-## ⚙ Error Handling & Validation
-
-- Returns `400 Bad Request` for invalid inputs.
-- Returns `404 Not Found` if user ID does not exist.
-- Returns `201 Created`, `200 OK`, and `204 No Content` as appropriate.
-
-## 📚 Learning
-
-This project helped understand:
-- NestJS fundamentals (modules, controllers, services)
-- DTOs and validation
-- In-memory CRUD operations
-- RESTful routing
+Use **Postman** to test the above routes.
 
 ---
 
-© 2025 Prodigy InfoTech Internship | Task 01
+✅ **Successfully completed as part of the Prodigy InfoTech Internship**  
+🔗 [#ProdigyInfoTech](https://www.linkedin.com/company/prodigy-infotech)
